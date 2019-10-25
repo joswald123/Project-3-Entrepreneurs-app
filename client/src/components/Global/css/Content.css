@@ -1,0 +1,11 @@
+.Content {
+    background-color: #fff;
+    margin-bottom: 40px;
+    margin-top: 180px;
+    
+}
+
+html {
+    min-height: 225%;
+    position: relative;
+  }

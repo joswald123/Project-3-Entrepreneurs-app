@@ -1,0 +1,113 @@
+ .Home {
+    text-align: center;
+    position: relative;
+  }
+
+  .boton{
+    opacity: 0.75 ;
+    position: sticky;
+    width: 60px;
+    height: 70px;
+    background: #373B44;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #4286f4, #373B44); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin: 5px;
+    padding: 10px;
+    font-size: 12px;
+    line-height: 32px;
+    text-transform: uppercase;
+    border-radius: 200px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s;
+    // text-shadow: 3px 2px 1px #9daef5;
+    // -webkit-box-shadow: 6px 5px 24px #666666;
+    // -moz-box-shadow: 6px 5px 24px #666666;
+    // box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+    color: #fafafa;
+    
+  }
+  .boton:hover{
+    opacity: 0.50;
+    -moz-opacity: .50;
+    
+  }
+  .boton a{
+    color:#fff;
+    text-decoration:none;
+    padding:5px 5px 5px 0;
+  }
+
+  .index {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    line-height: 20px;
+    font-size: 14px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding: 0 10px;
+  }
+  
+
+
+  section {
+    padding: 20px 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  /* #region cards slider */
+  .cards-slider-wrapper {
+    display: flex;
+    position: absolute;
+    transition: transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); 
+    .card {
+      flex: 1;
+      width: 500px;
+      opacity: 0.25;
+      transform: scale(0.7);
+      transition: opacity 300ms linear, transform 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      img {
+        max-width: calc(100%);
+        margin: 0 auto;
+        display: block;
+      }
+      .details {
+        position: relative;
+        max-height: 200px;
+      } 
+
+    }
+  }
+
+  $i: 0;
+  @for $i from 0 through 29 {
+    .cards-slider.active-slide-#{$i} #card-#{$i} {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+
+  .cards-slider {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+    
+    // border for active property
+   
+    &:after {
+      content: '';
+      display: block;
+      width: 110%;
+      height: 400px;
+      // outline: 5px solid #61DAFB;
+      position: absolute;
+      top: 0; 
+      left: 0; 
+    }
+  }
+  /* #endregion */

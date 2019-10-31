@@ -12,14 +12,10 @@ class Header extends Component {
     
     static propTypes = {
         title: PropTypes.string.isRequired,
-        items: PropTypes.array.isRequired
+        items: PropTypes.array.isRequired,
+    
     };
     
-    handleLogout() {
-        fire.auth().signOut()
-            .then(result => console.log(` Ha Salido`))
-            .catch(error => console.log(`Error ${error.code}: ${error.message}`));
-    }
 
     render() {
 
@@ -62,7 +58,7 @@ class Header extends Component {
 
                 <h3 style={styles}>Good {timeOfDay}!</h3>
 
-                <Link className="logoutbtn mt-2" onClick={this.handleLogout}>Logout</Link>
+                <Link onClick={() => fire.auth().signOut()}>Logout</Link>
                 
             </div>
 

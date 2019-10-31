@@ -1,25 +1,47 @@
 const express = require("express");
+const morgan = require("morgan");
+const mongoose = require ("mongoose");
 const path = require("path");
-const PORT = process.env.PORT || 3005;
+const apiRoutes = require("./routes/api/projects");
+
 const app = express();
 
-// Define middleware here
+// Settings
+const PORT = process.env.PORT || 3005;
+
+
+// Middlewares
+app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
+
+
+
+// Static files
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static('client/build'));
 }
 
-// Define API routes here
 
-// Send every other request to the React app
-// Define any API routes before this runs
+// Routes
+app.use('/api/projects',require('./routes/api/projects'));
 
+// Conect to Mongoose
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+mongoose.connect('mongodb://localhost/entrepreneurs-projects', function(error){
+   if(error){
+      throw error; 
+   }else{
+      console.log('Conectado a MongoDB');
+   }
 });
+
+ app.get("*", (req, res) => {
+res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
+
+
+// Starting the server
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

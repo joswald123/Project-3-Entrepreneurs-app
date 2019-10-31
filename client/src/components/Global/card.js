@@ -1,37 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from './Grid';
-import Jumbotron from '../../components/Global/Jumbotron';
+
 
 const Card = ({ property }) => {
-  
+
     const { index, picture, projectName, ideatorName, description, Cost } = property;
-   
+
     return (
 
         <Container >
-            
+
             <div id={`card-${index}`} className="card">
-            
-            <img src={picture} alt={projectName} />
 
-            <div className="details">
-                <span className="index">{index + 1}</span>
+                <img src={picture} alt={projectName} />
 
-                <p className="details">
+                <div className="details">
+
+                    <span className="index">{index + 1}</span>
+
                     
-                    {`Cost:  ${Cost}`}
-                    <br></br>
-                    {`Project Leader Name: ${ideatorName}`}
-                    <br></br>
-                    {`Project Description: ${description}`}
-                    
-                </p>
+                        <h2>{projectName}</h2>
+                        <h3>{ideatorName}</h3>
+                        <br></br>
+                        <p>{Cost.toLocaleString("en-US", { style: "currency", currency: "USD" })}
+                        -  {description}</p>
+    
+                </div>
             </div>
-        </div>
 
         </Container>
-        
+
     )
 }
 

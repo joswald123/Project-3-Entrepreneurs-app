@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import fire from '../config/Fire';
-import { Redirect } from 'react-router-dom';
-
 
 
 // Components
@@ -15,64 +12,12 @@ import items from '../Data/menu';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      user: {},
-      redirect: false
-    };
-  
-  }
+
 
   static propTypes = {
     children: PropTypes.object.isRequired
   };
 
-  componentWillMount() {
-    fire.auth().onAuthStateChanged(users => {
-        this.setState({ user: users })
-        this.setRedirect();
-        
-    });
-}
-
-  componentDidMount() {
-    this.authListener();
-    
-  }
-  
-  setRedirect = () => {
-    this.setState({
-      redirect: true
-    });
-  }
-
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/home' />
-    } else {
-      return <Redirect to='/' />
-    }
-  }
-
-
-
-  authListener() {
-
-    fire.auth().onAuthStateChanged((user) => {
-      console.log(user);
-      if (user) {
-        this.setState({ user });
-        
-        // history.pushState('/home')
-        } else {
-        this.setState({ user: null });
-       
-        // history.pushState('/')
-
-      }
-    });
-  }
 
   render() {
     const { children } = this.props;

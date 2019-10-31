@@ -1,3 +1,3 @@
-// module.exports = {
-//     book: require("./book")
-// };
+module.exports = {
+    Project: require("./projects")
+};

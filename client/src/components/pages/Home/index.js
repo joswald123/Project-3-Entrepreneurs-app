@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from "../../Global/Grid";
+import { Col, Row } from "../../Global/Grid";
 import '../Home/css/style.css'
 import Card from "../../Global/card.js";
 import data from "../../../Data/data";
+
 
 
 
@@ -35,8 +36,9 @@ class Home extends Component {
         return (
 
             <div className="Home">
-               
+                               
                  <Row>
+                     
                     <Col size="md-12">
 
                         <img
@@ -64,15 +66,6 @@ class Home extends Component {
                         <h1>Featured projects to work on</h1>
 
                     </section>
-
-                     {/* <button  className="boton" onClick={() => this.prevProperty()}
-                        disabled={property.index === 0}
-                    >Prev</button>
-                     <button className="boton" onClick={() => this.nextProperty()}
-                        disabled={property.index === data.properties.length - 1}
-                    >Next</button> */}
-                    
-                   
 
                     <div className="border" className={`cards-slider active-slide-${property.index}`}>
                         <div className="cards-slider-wrapper" style={{

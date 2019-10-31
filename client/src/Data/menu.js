@@ -1,15 +1,15 @@
 export default [
     {
+        title: 'Home',
+        url: '/'
+    },
+    {
         title: 'Login',
         url: '/login'
     },
     {
         title: 'Sign Up',
-        url: '/login'
-    },
-    {
-        title: 'Home',
-        url: '/'
+        url: '/signup'
     },
     {
         title: 'Dashboard',

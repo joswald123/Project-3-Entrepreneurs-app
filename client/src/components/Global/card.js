@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 
-const Card = ({ property, Name, Likes, Comments }) => {
+const Card = ({ property }) => {
 
     const { index, picture, projectName, ideatorName, description, Cost } = property;
 

@@ -8,9 +8,8 @@
   position: sticky;
   width: 60px;
   height: 70px;
-  background: #373B44;
   /* fallback for old browsers */
-  margin: 5px;
+  margin: 15%;
   padding: 10px;
   font-size: 12px;
   line-height: 32px;
@@ -21,6 +20,8 @@
   transition: all 0.5s;
   font-family: Arial;
   color: #fafafa;
+  border-radius: 50%;
+	background-image: linear-gradient(359.694deg, rgb(218, 0, 113), rgb(27, 0, 197));
 }
 
 .boton:hover {

@@ -178,7 +178,7 @@ class Header extends Component {
                             </NavItem>
                         ))}
 
-                        <button className="logoutbtn" onClick={() => fire.auth().signOut()}>Sing Out</button>
+                        <button className="logoutbtn" onClick={() => fire.auth().signOut()}>Sign Out</button>
                     </Collapse>
 
                 

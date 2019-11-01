@@ -1,7 +1,8 @@
-import React, { useCallback } from 'react';
-import { withRouter } from "react-router"
+import React, { useCallback, useContext } from 'react';
+import { withRouter, Redirect } from "react-router"
 import fire from '../../../config/Fire';
 import { Col, Row } from "../../Global/Grid";
+import { AuthContext } from '../../../Auth';
 
 
 
@@ -22,6 +23,12 @@ const Signup = ({ history }) => {
         }
 
     }, [history]);
+
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to="/" />;
+    }
 
     return (
 

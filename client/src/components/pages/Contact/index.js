@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Contact/style.css';
 import { Col, Row } from "../../Global/Grid";
-import Jumbotron from "../../Global/Jumbotron";
+
 
 
 class Contact extends Component {
@@ -20,7 +20,7 @@ class Contact extends Component {
                 <Row>
                     <Col size="md-2"></Col>
                     <Col size="md-3">
-                        <Jumbotron>
+                        
                             <br></br>
                             <br></br>
                             <div className="box border-0">
@@ -30,12 +30,12 @@ class Contact extends Component {
                                 </div>
                             </div>
 
-                        </Jumbotron>
+                        
 
                     </Col>
 
                     <Col size="md-3">
-                        <Jumbotron>
+                        
                             <br></br>
                             <br></br>
                             <div className="box">
@@ -45,11 +45,11 @@ class Contact extends Component {
                                 </div>
                             </div>
 
-                        </Jumbotron>
+                        
 
                     </Col>
                     <Col size="md-3">
-                        <Jumbotron>
+                        
                             <br></br>
                             <br></br>
                             <div className="box">
@@ -59,7 +59,7 @@ class Contact extends Component {
                                 </div>
                             </div>
 
-                        </Jumbotron>
+                        
 
                     </Col>
                     <Col size="md-1"></Col>

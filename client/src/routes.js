@@ -30,7 +30,7 @@ const AppRoutes = () =>
       <PrivateRoute exact path="/projectpage" component={ProjectPage} />
       <PrivateRoute exact path="/favoritespage" component={FavoritesPage} />
       <PrivateRoute exact path="/mailbox" component={MailBox} />
-      <PrivateRoute exact path="/contact" component={Contact} />
+      <Route exact path="/contact" component={Contact} />
       <Route exact component={NoMatch} />
 
     </Switch>

@@ -1,28 +1,52 @@
 .Header {
-    text-align: center;
-    height: 180px;
-    padding: 28px;
-    color: aliceblue;
-    background:black;
+    text-align: right;
+    height:  60px;
+    color:white;
+    background: black;
+    
      
+}
+.title {
+    padding-right: 10%;
 }
 
 .Menu {
     margin: 0;
-    padding: 0;
+    padding: 28px;
     list-style: none;
+    background: black;
 
 }
 
 .Menu li {
-    display: inline-block;
-    padding-right: 18px;
+    
+    position: right;
+    min-width: 160px;
+    z-index: 1;
+    background: black;
 }
 .Menu li a {
     color: rgb(45, 84, 133);
     text-decoration: none;
+    background: black;
 
 }
 .Menu li a:hover {
     color: #EEE;
+    background: black;
+}
+
+
+
+
+.logoutbtn {
+    background-color: transparent;
+    color: rgb(234, 241, 248);
+    border: transparent;
+    background: black;
+}
+
+.Collapse {
+    background: black;
+
 }

@@ -55,6 +55,8 @@ const Login = ({ history }) => {
                                 </label>
                                 <hr></hr>
                                 <button type="login" style={{ marginTop: '25px', marginLeft: '10px' }} className="btn btn-success">Login</button>
+                                <button type="" style={{ marginTop: '25px', marginLeft: '10px' }} 
+                                className="btn btn-success" onClick={<Redirect to="/singup"></Redirect>}>Sign Up</button>
 
                             </form>
                         </div>

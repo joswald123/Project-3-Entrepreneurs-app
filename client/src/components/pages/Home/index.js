@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row } from "../../Global/Grid";
+import { Col, Row, Container } from "../../Global/Grid";
 import '../Home/css/style.css'
 import Card from "../../Global/card.js";
 import data from "../../../Data/data";
@@ -14,6 +14,7 @@ class Home extends Component {
         this.state = {
             properties: data.properties,
             property: data.properties[0]
+            
         }
     }
     nextProperty = () => {
@@ -37,33 +38,12 @@ class Home extends Component {
 
             <div className="Home">
                                
-                 <Row>
-                     
-                    <Col size="md-12">
-
-                        <img
-                         style={{ width: 700, height: 500 }}
-                         className="d-block w-100"
-                         src="https://images.pexels.com/photos/936575/pexels-photo-936575.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                         alt="First slide"
-                        
-                        />  
-                        
-                    </Col>
-                    
-                </Row>
-                <Row>
-                    <Col size="md-4"></Col>
-                    <Col size="md-4">
-                    <h1>Best Projects to work on together</h1>
-                    </Col>
-                    <Col size="md-4"></Col>
-                </Row>
-
+                <Container>
                 <div className="page">
+                    
                     <section>
                         
-                        <h1>Featured projects to work on</h1>
+                        <h2>Featured projects to work on</h2>
 
                     </section>
 
@@ -84,6 +64,13 @@ class Home extends Component {
                         disabled={property.index === data.properties.length - 1}
                     >Next</button>
                 </div>
+
+
+
+
+                </Container>
+                
+                
             </div>
 
 

@@ -1,11 +1,10 @@
 .Content {
     background-color: #fff;
-    margin-bottom: 40px;
-    margin-top: 180px;
-    
+    margin-top: 60px;
+   
 }
 
 html {
-    min-height: 225%;
+    height: 130%;
     position: relative;
   }

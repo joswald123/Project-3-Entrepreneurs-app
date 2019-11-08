@@ -1,9 +1,8 @@
 // Dependencies
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import fire from '../../config/Fire';
-import { MdHome, MdDashboard, MdArrowDropDownCircle, MdStar, MdExtension, MdKeyboardArrowDown } from 'react-icons/md';
+import { MdDashboard, MdExtension, MdKeyboardArrowDown } from 'react-icons/md';
 import { IoIosLogIn, IoIosContacts, IoIosCash, IoIosMail } from "react-icons/io";
 import { GoProject, GoPencil, GoHeart } from "react-icons/go";
 import {
@@ -146,7 +145,7 @@ class Header extends Component {
                         <BSNavLink className={bem.e('nav-item-collapse')}>
                             <div className="float-right">
                                 <MdExtension className={bem.e('nav-item-icon')} />
-                                <span className="float-right text-uppercase">User Name</span>
+                                <span className="float-right text-uppercase">{this.props.user}</span>
                             </div>
                             <MdKeyboardArrowDown
                                 className={bem.e('nav-item-icon')}

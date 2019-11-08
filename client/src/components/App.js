@@ -19,6 +19,7 @@ class App extends Component {
   };
 
 
+
   render() {
     const { children } = this.props;
 
@@ -28,8 +29,9 @@ class App extends Component {
         <Header
           title="Entrepreneurs App"
           items={items}
+          user={this.props.user}
         />
-        <Content body={children} />
+        <Content body={children}/>
         <Footer />      
       </div>
     );

@@ -54,7 +54,7 @@ const UserProfile = ({ property, Likes, Comments, clickHeart, comments, addComme
                 <input
 					onChange={(e) => handleChange(e)}
 				 	className='CommentsBox'
-					type="text" placeholder='What do you think about the project'
+					type="text" placeholder='What do you think about this project?'
 					value={valueText}
 				></input>
 				<button className='CommentButton' onClick={()=> handleClickComment()}> > </button>

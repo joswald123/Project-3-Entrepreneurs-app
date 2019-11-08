@@ -8,6 +8,7 @@ const data = {
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
             "Cost": 300
+            
     
         },
         {
@@ -59,7 +60,7 @@ const data = {
             "projectName": "Jewelry Design",
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
-            "Cost": 300
+            "Cost": 477
         },
         {
     
@@ -89,7 +90,7 @@ const data = {
             "projectName": "Jewelry Design",
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
-            "Cost": 300
+            "Cost": 78
         },
         {
     
@@ -99,7 +100,7 @@ const data = {
             "projectName": "Jewelry Design",
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
-            "Cost": 300
+            "Cost": 3090
         },
         {
     
@@ -109,7 +110,7 @@ const data = {
             "projectName": "Jewelry Design",
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
-            "Cost": 300
+            "Cost": 350
         },
         {
     
@@ -119,7 +120,7 @@ const data = {
             "projectName": "Jewelry Design",
             "ideatorName": "Julia Smith",
             "description": "Kids who have an eye for fashion or a love for creative endeavors can find jewelry making a rewarding and profitable business.",
-            "Cost": 300
+            "Cost": 600
         }
 
     ]

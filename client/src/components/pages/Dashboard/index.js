@@ -3,9 +3,8 @@ import { Col, Row, Container } from "../../Global/Grid";
 import { Link } from 'react-router-dom';
 
 
-const DashboardPage = props => {
 
-    const { history } = props;
+const DashboardPage = (props) => {
 
 
     return (
@@ -13,7 +12,7 @@ const DashboardPage = props => {
             <Container>
             <Row>
                 <Col size="md-12">
-                    <h1>Your Welcome ...!</h1>
+                    <h1>{`Your Welcome, ${props.user}!`}</h1>
               </Col>
 
 
@@ -21,8 +20,8 @@ const DashboardPage = props => {
             <Row >
                 <Col size="md-1" ></Col>
                 <Col size="md-11">
-                    <Link onClick={() => history.push('/')}>Home</Link>
-                    <Link onClick={() => history.push('/dashboard')}>    | Dashboard</Link>
+                    <Link onClick={() => props.history.push('/')}>Home</Link>
+                    <Link onClick={() => props.history.push('/dashboard')}>    | Dashboard</Link>
                 </Col>
             </Row>
             <Row>

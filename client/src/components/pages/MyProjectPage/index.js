@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Api from '../../utils/Api';
 import { Col, Row, Container } from "../../Global/Grid";
+import { MdDelete, MdEdit, MdSend } from 'react-icons/md';
 import '../MyProjectPage/style.css'
 
 
@@ -22,9 +23,13 @@ class MyProjectPage extends Component {
     }
 
     handleSave = (event) => {
+        
         event.preventDefault();
         Api.addProject(this.state)
-        alert("Your response has been saved!")
+        .then(res => {
+            this.getSavedProjects();
+        })
+        alert("Your response has been saved!");
 
     }
 
@@ -38,9 +43,10 @@ class MyProjectPage extends Component {
                 if (res.data.length > 0) {
 
                     this.setState({
-                        savedProjectss: res.data,
+                        savedProjects: res.data,
                         target: "_blank"
                     });
+
 
                 } else {
                     this.setState({
@@ -50,8 +56,36 @@ class MyProjectPage extends Component {
 
             })
             .catch(err => console.log(err));
+
     }
 
+    handleDeleteButton = id => {
+
+        Api.deleteProject(id)
+            .then(res => this.componentDidMount())
+            .then(res => this.getSavedProjects())
+            .catch(err => console.log(err));
+
+    }
+
+    handleEditButton = id => {
+
+        Api.updateProject(id)
+            .then(res => {
+                this.setState({
+
+                    index: res.data.index,
+                    picture: res.data.picture,
+                    projectName: res.data.projectName,
+                    ideatorName: res.data.ideatorName,
+                    description: res.data.description,
+                    Cost: res.data.Cost
+                });
+                console.log(res)
+            })
+            .then(res => this.getSavedProjects())
+            .catch(err => console.log(err));
+    }
 
     handleChange = (e) => {
         const { name, value } = e.target;
@@ -68,9 +102,11 @@ class MyProjectPage extends Component {
                 <br></br>
                 <Container>
                     <Row>
-                        <Col size="md-6">
+                        <Col size="md-12">
                             <div className="card">
                                 <div className="card-content">
+                                    <h1>Upload your new Project!</h1>
+                                    <hr></hr>
                                     <form onSubmit={this.handleSave}>
 
                                         <div>
@@ -103,7 +139,7 @@ class MyProjectPage extends Component {
                                         </div>
 
                                         <button type="submit" className="btn btn-primary">
-                                            Send
+                                            < MdSend /> Send
                                           </button>
 
 
@@ -113,33 +149,45 @@ class MyProjectPage extends Component {
 
                         </Col>
 
-                        <Col size="md-6">
-                            <table>
-                                <div id={`card-${this.state.index}`} className="card">
+                    </Row>
+                    <hr></hr>
 
-                                <img src={this.state.picture} alt={this.state.projectName} />
+                    <Row>
 
-                                <div className="details">
+                        <Col size="md-12">
 
+                            <h1> My Projects </h1>
+                            <hr></hr>
 
-                                    <h2>{this.state.projectName}</h2>
-                                    <h3>{this.state.ideatorName}</h3>
-                                    <br></br>
-                                    <p>{this.state.Cost.toLocaleString("en-US", { style: "currency", currency: "USD" })}
-                                        -  {this.state.description}</p>
+                            {this.state.savedProjects.map(project => (
 
-                                        
+                                <div className='UserProfileContainer card' id={`card-${project.index}`}>
+                                    <div className='ImageContainer'>
+                                        <img className='Img' src={project.picture} alt={project.projectName}></img>
+                                    </div>
+                                    <div className='InfoContainer details'>
+                                        <span className="index">{project.index + 1}</span>
+
+                                        <div className='Name'> {project.projectName} </div>
+                                        <div className='Name'> {project.ideatorName} </div>
+                                        <br></br>
+                                        <p>{project.Cost.toLocaleString("en-US", { style: "currency", currency: "USD" })}
+                                            -  {project.description}</p>
+                                        <br></br>
+                                        <button className="btn btn-danger" id={project._id} onClick={() => this.handleDeleteButton(project._id)}><MdDelete />Delete</button>
+                                        <button className="btn btn-success" id={project._id} onClick={() => this.handleEditButton(project._id)}><MdEdit />Edit</button>
+                                    </div>
 
                                 </div>
-                            </div>
 
-                            </table>
+                            ))}
 
-                            
 
                         </Col>
 
+
                     </Row>
+
                 </Container>
             </div>
         )

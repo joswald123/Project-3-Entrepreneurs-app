@@ -6,25 +6,31 @@ import { AuthContext } from '../../../Auth';
 
 
 
-const Login = ({ history }) => {
+const Login = (props) => {
     const handleLogin = useCallback(async event => {
         event.preventDefault();
         const { email, password } = event.target.elements;
         try {
             await fire
                 .auth()
-                .signInWithEmailAndPassword(email.value, password.value);
-            history.push("/");
+                .signInWithEmailAndPassword(email.value, password.value)
+                .then(function () {
+                let currentUser = fire.auth().currentUser;
+                // console.log(currentUser.displayName); 
+                props.updatedUser(currentUser.displayName)
+                props.history.push("/");
+                });
         } catch (error) {
             alert(error);
 
         }
 
-    }, [history]);
+    }, [props.history]);
 
     const { currentUser } = useContext(AuthContext);
 
     if (currentUser) {
+        // console.log( currentUser )
         return <Redirect to="/" />;
     }
 

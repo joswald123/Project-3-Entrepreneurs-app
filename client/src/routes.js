@@ -1,5 +1,5 @@
 //Dependencies
-import React from "react";
+import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
 //Compponents
@@ -17,24 +17,42 @@ import FavoritesPage from './components/pages/FavoritePage';
 import MailBox from './components/pages/MailBox';
 import PrivateRoute from "./PrivateRoute";
 
+class AppRoutes extends Component {
+  state = {
 
-const AppRoutes = () =>
-  <AuthProvider>
-  <App>
-    <Switch>
-      <PrivateRoute exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/signup" component={SignUp} />
-      <PrivateRoute exact path="/dashboard" component={Dashboard} />
-      <PrivateRoute exact path="/backerpage" component={BackerPage} />
-      <PrivateRoute exact path="/projectpage" component={ProjectPage} />
-      <PrivateRoute exact path="/favoritespage" component={FavoritesPage} />
-      <PrivateRoute exact path="/mailbox" component={MailBox} />
-      <Route exact path="/contact" component={Contact} />
-      <Route exact component={NoMatch} />
+    username: "",
 
-    </Switch>
-  </App>
-  </AuthProvider>;
+  }
+
+  updatedUser = (currentUser) => {
+    this.setState ({ username: currentUser})
+    // console.log(this.state.username)
+  }
+
+  render() {
+    return (
+
+      <AuthProvider>
+        <App user = {this.state.username}>
+          <Switch>
+            <PrivateRoute exact path="/" component={Home} />
+            <Route exact path="/login" render = {(props) => <Login updatedUser = {this.updatedUser} /> }/>
+            <Route exact path="/signup" render={(props) => <SignUp updatedUser = {this.updatedUser} />}/>
+            <PrivateRoute user = {this.state.username} path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/backerpage" component={BackerPage} />
+            <PrivateRoute exact path="/projectpage" component={ProjectPage} />
+            <PrivateRoute exact path="/favoritespage" component={FavoritesPage} />
+            <PrivateRoute exact path="/mailbox" component={MailBox} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact component={NoMatch} />
+
+          </Switch>
+        </App>
+      </AuthProvider>
+
+    );
+  }
+}
+  
 
 export default AppRoutes;

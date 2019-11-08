@@ -6,7 +6,9 @@ import { Col, Row } from "../../Global/Grid";
 
 class Contact extends Component {
     render() {
+
         return (
+            
             <div className="contactUs">
 
                 <Row >

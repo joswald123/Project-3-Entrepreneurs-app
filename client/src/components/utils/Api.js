@@ -11,5 +11,22 @@ export default {
         return axios.post("/api/projects", addProject)
         
     },
+    getProject: function(id) {
+        return axios.get("/api/projects" + id);
+    },
+
+    saveProject: function(saveProject) {
+        return axios.post("/api/projects", saveProject);
+    },
+
+    deleteProject: function(id) {
+        return axios.delete("/api/projects/" + id);
+    },
+
+    updateProject: function(id) {
+        return axios.put("/api/projects/" + id);
+    }
+
+
 
 }

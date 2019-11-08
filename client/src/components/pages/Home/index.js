@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from "../../Global/Grid";
+import { Container } from "../../Global/Grid";
 import '../Home/css/style.css'
 
 import data from "../../../Data/data";
@@ -21,7 +21,7 @@ class Home extends Component {
                 value: 'React is Awesome !!'
             }],
 
-            savedFavandComm: []
+            savedFavandComm: [] 
 
         }
     }
@@ -55,7 +55,7 @@ class Home extends Component {
         arrayComments.push(newComment)
         this.setState({ ComentsNumber: comments + 1 })
         this.setState({ Comments: arrayComments })
-        this.setState({ valueText: '' })
+        this.setState({ valueText: "" })
 
     }
     

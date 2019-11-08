@@ -55,6 +55,7 @@
 	width: 100%;
 	height: 270px;
 	overflow: scroll;
+	margin-bottom: 60px;
 }
 
 .CommentsContainer  {

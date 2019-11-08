@@ -7,7 +7,7 @@ import './css/Footer.css';
 
 
 class Footer extends Component {
-    
+
     static propTypes = {
         copyright: PropTypes.string
     };
@@ -16,10 +16,15 @@ class Footer extends Component {
         const { copyright = "&copy; Entreperneurs App, React 2019" } = this.props;
 
         return (
-            <div className="Footer sticky-footer">
-                <p dangerouslySetInnerHTML={{__html: copyright }} />
+            <div>
                 
+                <div className="Footer sticky-footer">
+                    <p dangerouslySetInnerHTML={{ __html: copyright }} />
+
+                </div>
+
             </div>
+
         );
     }
 }
